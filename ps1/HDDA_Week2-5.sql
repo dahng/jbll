@@ -1,10 +1,8 @@
-/*
 --------------------------------------------------------------------------------
 --Task 1 Write queries to create entities
 --1.1 Creating entities
 --
 --------------------------------------------------------------------------------
-*/
 CREATE  TABLE CAMPUS(
     CAMPUS_ID           VARCHAR2(5)      NOT NULL,
     CAMPUS_NAME         VARCHAR2(100),
@@ -99,41 +97,31 @@ CREATE  INDEX ORDER_LINE_FITEM_IDX ON ORDER_LINE(FOOD_ITEM_ID);
 CREATE  SEQUENCE ORDER_LINE_SEQ
     START WITH 1
     INCREMENT BY 1;
-/*
 --------------------------------------------------------------------------------
 --Task 1 Write queries to create entities
 --1.2 Creating Prices_Food_Item_ID_SEQ by default values
 --
 --------------------------------------------------------------------------------
-*/
 CREATE  SEQUENCE PRICE_FOOD_ITEM_ID_SEQ;
 
-/*
 --------------------------------------------------------------------------------
 --Task 2 Write queries to insert data
 --
 --
 --------------------------------------------------------------------------------
-*/
-/*
 -- FEEDING CAMPUS
-*/
 INSERT  INTO CAMPUS VALUES(CAMPUS_SEQ.NEXTVAL, 'IUPUI', '425 University Blvd.', 'Indianapolis', 'IN', '46202', '317-274-4591', .08);
 INSERT  INTO CAMPUS VALUES(CAMPUS_SEQ.NEXTVAL, 'Indiana University', '107 S. Indiana Ave.', 'Bloomington', 'IN', '47405', '812-855-4848', .07);
 INSERT  INTO CAMPUS VALUES(CAMPUS_SEQ.NEXTVAL, 'Purdue University', '475 Stadium Mall Drive', 'West Lafayette', 'IN', '47907', '765-494-1776', .06);
 
-/*
 -- FEEDING POSITION
-*/
 INSERT  INTO POSITION VALUES(POSITION_SEQ.NEXTVAL,'Lecturer', 1050.50);
 INSERT  INTO POSITION VALUES(POSITION_SEQ.NEXTVAL,'Associate Professor', 900.50);
 INSERT  INTO POSITION VALUES(POSITION_SEQ.NEXTVAL,'Assistant Professor', 875.50);
 INSERT  INTO POSITION VALUES(POSITION_SEQ.NEXTVAL,'Professor', 700.75);
 INSERT  INTO POSITION VALUES(POSITION_SEQ.NEXTVAL,'Full Professor', 500.50);
 
-/*
 -- FEEDING MEMBERS
-*/
 INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Ellen', 'Monk', '009 Purnell', '812-123-1234', '2', '5', 12);
 INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Joe', 'Brady', '008 Statford Hall', '765-234-2345', '3', '2', 10);
 INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Dave', 'Davidson', '007 Purnell', '812-345-3456', '2', '3', 10);
@@ -144,18 +132,14 @@ INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Bob', 'House', 'ET 329', '317-
 INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Bridget', 'Stanley', 'SI 234', '317-274-5678', '1', '1', 12);
 INSERT  INTO MEMBERS VALUES(MEMBERS_SEQ.NEXTVAL, 'Bradley', 'Wilson', '334 Statford Hall', '765-258-2567', '3', '2', 10);
 
-/*
 -- FEEDING PRICES
-*/
 INSERT  INTO PRICES VALUES(PRICES_SEQ.NEXTVAL, 'Beer/Wine', 5.50);
 INSERT  INTO PRICES VALUES(PRICES_SEQ.NEXTVAL, 'Dessert', 2.75);
 INSERT  INTO PRICES VALUES(PRICES_SEQ.NEXTVAL, 'Dinner', 15.50);
 INSERT  INTO PRICES VALUES(PRICES_SEQ.NEXTVAL, 'Soft Drink', 2.50);
 INSERT  INTO PRICES VALUES(PRICES_SEQ.NEXTVAL, 'Lunch', 7.25);
 
-/*
 -- FEEDING FOOD_ITEMS
-*/
 INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'Lager', 1);
 INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'Red Wine', 1);
 INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'White Wine', 1);
@@ -172,9 +156,7 @@ INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'Fish and Chips', 5);
 INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'Angus Beef Burger', 5);
 INSERT  INTO FOOD_ITEMS VALUES(FOOD_ITEMS_SEQ.NEXTVAL, 'Cobb Salad', 5);
 
-/*
 -- FEEDING ORDERS
-*/
 INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 9, 'March 5, 2005');
 INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 8, 'March 5, 2005');
 INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 7, 'March 5, 2005');
@@ -185,9 +167,7 @@ INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 3, 'March 5, 2005');
 INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 2, 'March 6, 2005');
 INSERT  INTO ORDERS VALUES(ORDERS_SEQ.NEXTVAL, 1, 'March 7, 2005');
 
-/*
 -- FEEDING ORDER_LINE
-*/
 INSERT  INTO ORDER_LINE VALUES(1,10001,1);
 INSERT  INTO ORDER_LINE VALUES(1,10006,1);
 INSERT  INTO ORDER_LINE VALUES(1,10012,1);
@@ -216,51 +196,41 @@ INSERT  INTO ORDER_LINE VALUES(8,10011,1);
 
 INSERT  INTO ORDER_LINE VALUES(9,10001,1);
 
-/*
 --------------------------------------------------------------------------------
 --Task 3 Write queries to [...]
 --3.1 List all constraints in the database
 --
 --------------------------------------------------------------------------------
-*/
 SELECT  *
 FROM    USER_CONSTRAINTS;
 
-/*
 --------------------------------------------------------------------------------
 --Task 3 Write queries to [...]
 --3.2 List all table names in the database
 --
 --------------------------------------------------------------------------------
-*/
 SELECT  TABLE_NAME
 FROM    USER_TABLES;
 
-/*
 --Specify the owner's name to filter tables (apply to others)
 --SELECT TABLE_NAME
 --FROM ALL_TABLES 
 --WHERE OWNER = 'SCHEMA_NAME';
-*/
 
-/*
 --------------------------------------------------------------------------------
 --Task 3 Write queries to [...]
 --3.3 List all sequences in the database
 --
 --------------------------------------------------------------------------------
-*/
 SELECT  SEQUENCE_NAME
 FROM    USER_SEQUENCES;
 
-/*
 --------------------------------------------------------------------------------
 --Task 3 Write queries to [...]
 --3.4 List all members by their first name, last name, position, campus name,
 --    monthly dues in descending order by campus name, then ascending order by
 --    last name.
 --------------------------------------------------------------------------------
-*/
 SELECT  FIRST_NAME, 
         LAST_NAME, 
         POSITION, 
