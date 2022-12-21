@@ -1,8 +1,8 @@
---------------------------------------------------------------------------------
---Task 1 Write queries to create entities
---1.1 Creating entities
+-- ------------------------------------------------------------------------------
+-- Task 1 Write queries to create entities
+-- 1.1 Creating entities
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 CREATE  TABLE CAMPUS(
     CAMPUS_ID           VARCHAR2(5)      NOT NULL,
     CAMPUS_NAME         VARCHAR2(100),
@@ -97,18 +97,18 @@ CREATE  INDEX ORDER_LINE_FITEM_IDX ON ORDER_LINE(FOOD_ITEM_ID);
 CREATE  SEQUENCE ORDER_LINE_SEQ
     START WITH 1
     INCREMENT BY 1;
---------------------------------------------------------------------------------
---Task 1 Write queries to create entities
---1.2 Creating Prices_Food_Item_ID_SEQ by default values
+-- ------------------------------------------------------------------------------
+-- Task 1 Write queries to create entities
+-- 1.2 Creating Prices_Food_Item_ID_SEQ by default values
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 CREATE  SEQUENCE PRICE_FOOD_ITEM_ID_SEQ;
 
---------------------------------------------------------------------------------
---Task 2 Write queries to insert data
+-- ------------------------------------------------------------------------------
+-- Task 2 Write queries to insert data
 --
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 -- FEEDING CAMPUS
 INSERT  INTO CAMPUS VALUES(CAMPUS_SEQ.NEXTVAL, 'IUPUI', '425 University Blvd.', 'Indianapolis', 'IN', '46202', '317-274-4591', .08);
 INSERT  INTO CAMPUS VALUES(CAMPUS_SEQ.NEXTVAL, 'Indiana University', '107 S. Indiana Ave.', 'Bloomington', 'IN', '47405', '812-855-4848', .07);
@@ -196,41 +196,41 @@ INSERT  INTO ORDER_LINE VALUES(8,10011,1);
 
 INSERT  INTO ORDER_LINE VALUES(9,10001,1);
 
---------------------------------------------------------------------------------
---Task 3 Write queries to [...]
---3.1 List all constraints in the database
+-- ------------------------------------------------------------------------------
+-- Task 3 Write queries to [...]
+-- 3.1 List all constraints in the database
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 SELECT  *
 FROM    USER_CONSTRAINTS;
 
---------------------------------------------------------------------------------
---Task 3 Write queries to [...]
---3.2 List all table names in the database
+-- ------------------------------------------------------------------------------
+-- Task 3 Write queries to [...]
+-- 3.2 List all table names in the database
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 SELECT  TABLE_NAME
 FROM    USER_TABLES;
 
---Specify the owner's name to filter tables (apply to others)
---SELECT TABLE_NAME
---FROM ALL_TABLES 
---WHERE OWNER = 'SCHEMA_NAME';
+-- Specify the owner's name to filter tables (apply to others)
+-- SELECT TABLE_NAME
+-- FROM ALL_TABLES 
+-- WHERE OWNER = 'SCHEMA_NAME';
 
---------------------------------------------------------------------------------
---Task 3 Write queries to [...]
---3.3 List all sequences in the database
+-- ------------------------------------------------------------------------------
+-- Task 3 Write queries to [...]
+-- 3.3 List all sequences in the database
 --
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 SELECT  SEQUENCE_NAME
 FROM    USER_SEQUENCES;
 
---------------------------------------------------------------------------------
---Task 3 Write queries to [...]
---3.4 List all members by their first name, last name, position, campus name,
---    monthly dues in descending order by campus name, then ascending order by
---    last name.
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
+-- Task 3 Write queries to [...]
+-- 3.4 List all members by their first name, last name, position, campus name,
+--     monthly dues in descending order by campus name, then ascending order by
+--     last name.
+-- ------------------------------------------------------------------------------
 SELECT  FIRST_NAME, 
         LAST_NAME, 
         POSITION, 
