@@ -1,3 +1,3 @@
 # -
 
-Notes and submissions from Java Back-End Course by [Like Lion Vietnam](https://www.facebook.com/likelionvietnam)
+Notes and submission from Java Back-End Course by [Like Lion Vietnam](https://www.facebook.com/likelionvietnam)
