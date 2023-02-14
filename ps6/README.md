@@ -2,6 +2,8 @@
 
 ## Test API index#1
 
+Chức năng: Thêm một tutorial
+
 URL: `/api/tutorials`
 
 ```bash
@@ -34,6 +36,8 @@ curl -s -i -X POST -H "Content-Type: application/json" --data-raw '{
 ```
 
 ## Test API index#2
+
+Chức năng: Hiển thị các tutorial hiện có
 
 URL: `/api/tutorials`
 
@@ -79,7 +83,9 @@ curl -i http://localhost:8080/api/tutorials | tail -n1 | jq .
 
 ## Test API index#3
 
-URL: `/api/tutorials/1`
+Chức năng: Hiển thị tutorial qua id
+
+URL: `/api/tutorials/id`
 
 ```bash
 curl -i http://localhost:8080/api/tutorials/1
@@ -98,7 +104,9 @@ Date: Tue, 14 Feb 2023 12:14:53 GMT
 
 ## Test API index#4
 
-URL: `/api/tutorials/1`
+Chức nặng: Cập nhật tutorial qua id
+
+URL: `/api/tutorials/id`
 
 ```bash
 curl -s -i -X PUT -H "Content-Type: application/json" --data-raw '{
@@ -121,7 +129,9 @@ Date: Tue, 14 Feb 2023 12:17:17 GMT
 
 ## Test API index#5
 
-URL: `/api/tutorials/2`
+Chức nặng: Xoá tutorial qua id
+
+URL: `/api/tutorials/id`
 
 ```bash
 curl -i -X DELETE  http://localhost:8080/api/tutorials/2
@@ -135,6 +145,8 @@ Date: Tue, 14 Feb 2023 12:20:08 GMT
 ```
 
 ## Test API index#6
+
+Chức năng: Xoá tất cả tutorial
 
 URL: `/api/tutorials`
 
@@ -150,6 +162,8 @@ Date: Tue, 14 Feb 2023 12:23:45 GMT
 ```
 
 ## Test API index#7
+
+Chức năng: Hiển thị những tutorial được published (published == true)
 
 URL: `/api/tutorials/published`
 
@@ -192,6 +206,8 @@ curl -i localhost:8080/api/tutorials/published | tail -n1 | jq .
 ```
 
 ## Test API index#8
+
+Chức năng: Tìm tutorial qua parameter
 
 Dữ liệu đang có trong H2 database:
 
