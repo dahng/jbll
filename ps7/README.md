@@ -2,6 +2,29 @@
 
 ## Demonstration
 
+Note: Using 8080 instead of 9081
+
+```
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9081 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.946 s
+[INFO] Finished at: 2023-02-17T16:52:10+07:00
+[INFO] ------------------------------------------------------------------------
+```
+
 - Log file when access an endpoint from browser: Line 23, 32, 43
 
 ```
